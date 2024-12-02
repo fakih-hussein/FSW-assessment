@@ -44,5 +44,11 @@ class projectsController extends Controller
             "project"=>$project,
         ]);
     }
+
+    function deleteProject($id){
+        $project=Project::find($id)->delete();
+
+
+    }
     
 }
