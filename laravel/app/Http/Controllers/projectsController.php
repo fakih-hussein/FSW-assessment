@@ -30,5 +30,11 @@ class projectsController extends Controller
         ]);
     }
 
+    function updateProject($id,Request $request){
+        $project=Project::find($id)->update([
+            "title"=>$request->title,
+            "description"=>$request->description,
+        ]);
+    }
     
 }
