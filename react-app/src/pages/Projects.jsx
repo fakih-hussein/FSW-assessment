@@ -2,7 +2,10 @@ import React from "react";
 import Project from "../components/Project";
 
 const Projects = () => {
-  return (
+
+  const { projects } = useContext(ProjectsContext);
+  
+    return (
     <div className="projects-container">
       {projects.map((p) => (
         <Project project={p} key={p.id} />
