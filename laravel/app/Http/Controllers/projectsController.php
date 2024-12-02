@@ -23,5 +23,12 @@ class projectsController extends Controller
         ]);
     }
 
+    function createProject(Request $request){
+        $project=Project::create([
+            "title"=>$request->title,
+            "description"=>$request->description,
+        ]);
+    }
+
     
 }
