@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
-class projectsController extends Controller
-{
+class projectsController extends Controller{
+    
      function getProjects(){
         $projects=Project::All();
 
@@ -48,7 +48,9 @@ class projectsController extends Controller
     function deleteProject($id){
         $project=Project::find($id)->delete();
 
-
+        return response()->json([
+            "project"=>$project,
+        ]);
     }
     
 }
