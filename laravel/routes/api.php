@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\projectsController;
 
-Route::prefix("/Projects")->group(function () {
+Route::prefix("/projects")->group(function () {
     Route::get("/", [projectsController::class, "getProjects"]);
     Route::get("/{id}", [projectsController::class, "getProject"]);
     Route::post("/", [projectsController::class, "createProject"]);
@@ -13,7 +13,7 @@ Route::prefix("/Projects")->group(function () {
     Route::delete("/{id}", [projectsController::class, "deleteProject"]);
 });
 
-Route::prefix("/Users")->group(function () {
+Route::prefix("/users")->group(function () {
     Route::get("/", [userController::class, "getUsers"]);
     Route::get("/{id}", [userController::class, "getUser"]);
     Route::post("/", [userController::class, "createUser"]);
