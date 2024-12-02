@@ -28,12 +28,20 @@ class projectsController extends Controller
             "title"=>$request->title,
             "description"=>$request->description,
         ]);
+
+        return response()->json([
+            "project"=>$project,
+        ]);
     }
 
     function updateProject($id,Request $request){
         $project=Project::find($id)->update([
             "title"=>$request->title,
             "description"=>$request->description,
+        ]);
+
+        return response()->json([
+            "project"=>$project,
         ]);
     }
     
